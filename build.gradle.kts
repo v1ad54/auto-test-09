@@ -32,6 +32,16 @@ dependencies {
     // Source: https://mvnrepository.com/artifact/com.codeborne/selenide
     implementation("com.codeborne:selenide:7.19.1")
 
+    implementation(project(":api-test"))
+
+    // Lombok для src/main/java
+    compileOnly("org.projectlombok:lombok:1.18.46")
+    annotationProcessor("org.projectlombok:lombok:1.18.46")
+
+    // Lombok для src/test/java
+    testCompileOnly("org.projectlombok:lombok:1.18.46")
+    testAnnotationProcessor("org.projectlombok:lombok:1.18.46")
+
 }
 
 tasks.test {
