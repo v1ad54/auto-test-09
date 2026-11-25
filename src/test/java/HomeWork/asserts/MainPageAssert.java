@@ -3,6 +3,8 @@ package HomeWork.asserts;
 import org.assertj.core.api.AbstractAssert;
 import HomeWork.pages.MainPage;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.*;
 
 public class MainPageAssert extends AbstractAssert<MainPageAssert, MainPage> {
@@ -56,6 +58,18 @@ public class MainPageAssert extends AbstractAssert<MainPageAssert, MainPage> {
      */
     public MainPageAssert cartCounterHasCount(int expectedCount) {
         actual.getCartCounter().shouldHave(exactText(String.valueOf(expectedCount)));
+        return this;
+    }
+
+    /**
+     * Ожидает, пока всплывающее уведомление (тост) исчезнет с экрана
+     * Столкнулся с тем что сообщение, о том что товар добавлен в корзину,
+     * загораживает кнопку для добавления следующего товара. Поэтому, подождем когда сообщение исчезнет
+
+     * @param timeout - максимальное время ожидания закрытия сообщения, в милисекундах
+     */
+    public MainPageAssert toastDisappears(long timeout) {
+        actual.getToast().should(disappear, Duration.ofMillis(timeout));
         return this;
     }
 

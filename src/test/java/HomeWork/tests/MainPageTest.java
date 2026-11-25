@@ -71,7 +71,7 @@ public class MainPageTest {
 
         // Добавим каждый тестовый товар в корзину
         for (GoodsExtDto item : listGoods) {
-            mainPage.clickGoodsToCart(item.id());
+            mainPage.clickButtonGoodsToCart(item.id());
         }
 
         // Проверим счетчик товаров в корзине
