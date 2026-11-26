@@ -131,7 +131,7 @@ public class AdminPageAssert extends AbstractAssert<AdminPageAssert, AdminPage> 
      * @param id - Id товара
      */
     public AdminPageAssert editGoodPriceInputIsVisible(int id) {
-        actual.getEditGoodNameInput(id).should(visible);
+        actual.getEditGoodPriceInput(id).should(visible);
         return this;
     }
 
@@ -141,7 +141,7 @@ public class AdminPageAssert extends AbstractAssert<AdminPageAssert, AdminPage> 
      * @param id - Id товара
      */
     public AdminPageAssert saveButtonIsVisible(int id) {
-        actual.getEditGoodNameInput(id).should(visible);
+        actual.getSaveButton(id).should(visible);
         return this;
     }
 
